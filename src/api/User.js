@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BACKEND_ORIGIN_URL = 'http://localhost:3000';  // Remove the trailing slash
+const BACKEND_ORIGIN_URL = 'https://job-finder-backend-pi.vercel.app';  // Remove the trailing slash
 
 const Login = async (email, password) => {
     try {
