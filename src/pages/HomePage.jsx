@@ -17,15 +17,7 @@ const HomePage = ({ currentUser, setCurrentUser }) => {
 	useEffect(() => {
 		handleFetchJobs();
 	}, []);
-    
-	//If you want to use fetchJobs() function in Job.js
-	// const handleFetchJobs = async () => {
-	// 	const response = await fetchJobs();
-	// 	console.log("Home Page Response: ", response)
-	// 	if (response.status == 200) {
-	// 		setJobs(response.data.jobs);
-	// 	}
-	// };
+
 
 	const handleFetchJobs = async () => {
 		const response = await fetchJobsByQuery(query);

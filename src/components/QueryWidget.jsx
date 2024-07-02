@@ -1,5 +1,6 @@
 import React from 'react'
 import skills from "../data/skills";
+import { IoSearch } from "react-icons/io5";
 import Search from '../assets/searchIcon.png';
 
 
@@ -32,17 +33,17 @@ const QueryWidget = ({ query, setQuery, handleFetchJobs }) => {
 	return (
 		<div className='flex justify-center items-center md:relative'>
 			<div className='md:w-[80%] w-[90%] h-fit md:py-12 py-6 md:px-5 shadow-xl shadow-[#f6c6c6] bg-white my-4 rounded-md'>
-				<div className='relative'>
+				<div className="relative mx-auto block md:w-[80%] w-[95%] md:px-12 px-8 py-2 border-2 border-[#E3E3E3] rounded-sm outline-none focus-within:ring-1 focus-within:ring-[#ED5353]">
+					<IoSearch size={"24px"} className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400" />
 					<input
 						type="text"
 						placeholder="Type any job title"
-						className='mx-auto block md:w-[80%] w-[95%] md:px-12 px-8 py-2 border-2 border-[#E3E3E3] rounded-sm outline-none focus:ring-1 focus:ring-[#ED5353] focus:border-none'
+						className="w-full pl-4 py-2 outline-none border-none"
 						value={query.title}
 						onChange={(e) => setQuery({ ...query, title: e.target.value })}
 					/>
-					<img className='absolute top-3 lg:left-[8.5rem] md:left-20 left-4 w-5 h-5' src={Search} alt="SearchIcon" />
 				</div>
-				<div className='md:block flex flex-col'>
+				<div className='md:block flex flex-col ml-2'>
 					<div className='md:absolute lg:ml-[7.5rem] md:ml-16 ml-2 md:w-fit w-[35%] my-4 lg:px-5 px-0.5 py-1 rounded-md border-2 border-[#CECECE] text-[#9C9C9C]'>
 						<select
 							onChange={(e) => handleSkillChange(e.target.value)}
